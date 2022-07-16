@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->model('vivienda_model');
             $this->vivienda_model->m_insert_vivienda($data);
             $this->db->close();
-            redirect('vivieda_controller');
+            redirect('vivienda_controller');
 
         }
         public function c_create_view_vivienda(){
@@ -64,11 +64,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->load->view('vivienda_view', $data);
         }
 
+        public function c_get_vivienda(){
+
+            $id_vivienda = $this->input->get('id_vivienda');
+            $this->load->model('vivienda_model');
+            $data['vivienda'] = $this->vivienda_model->m_get_vivienda($id_vivienda);
+            $data['view_type'] = 'get_one';
+            $this->load->view('vivienda_view', $data);
+        }
         public function c_get_viviendas_cantidad(){
 
             $this->load->model('vivienda_model');
             $data['viviendas'] = $this->vivienda_model->m_get_viviendas_cantidad();
             $data['view_type'] = 'get_cantidad';
+            $this->load->view('vivienda_view', $data);
+        }
+
+        public function c_get_viviendas_nuevas(){
+
+            $this->load->model('vivienda_model');
+            $data['viviendas'] = $this->vivienda_model->m_get_viviendas_nuevas();
+            $data['view_type'] = 'get_nuevas';
             $this->load->view('vivienda_view', $data);
         }
 

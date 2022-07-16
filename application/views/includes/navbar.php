@@ -30,7 +30,7 @@
                         </li>
                         <!-- viviendas nuevas -->
                         <li class="dropdown-item">
-                            <a class="nav-link" href="<?php echo base_url() ?>vivienda/c_get_viviendas_nuevas">Viviendas Nuevas</a>
+                            <a class="nav-link" href="<?php echo base_url() ?>index.php/vivienda_controller/c_get_viviendas_nuevas">Viviendas Nuevas</a>
                         </li>
                     </ul>
                 </li>

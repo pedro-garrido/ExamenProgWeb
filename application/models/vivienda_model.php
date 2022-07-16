@@ -33,6 +33,12 @@
             $query = $this->db->get('vivienda');
             return $query->num_rows();
         }
+        public function m_get_viviendas_nuevas() {
+            $this->db->where('estado', 1);
+            $query = $this->db->get('vivienda');
+            return $query->result_array();
+        }
+
     }
 
 ?>

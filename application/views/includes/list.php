@@ -24,7 +24,7 @@
                         <td>
                             <div class="btn-group" role="group">
 
-                                <a href="<?php echo base_url() ?>index.php/vivienda_controller/c_get_vivienda/<?php echo $vivienda['id_vivienda'] ?>" class="btn btn-secondary">Ver</a>
+                                <a href="<?php echo base_url() ?>index.php/vivienda_controller/c_get_vivienda?id_vivienda=<?php echo $vivienda['id_vivienda'] ?>" class="btn btn-secondary">Ver</a>
 
                                 <a href="<?php echo base_url() ?>index.php/vivienda_controller/c_update_view_vivienda?id_vivienda=<?php echo $vivienda['id_vivienda'] ?>" class="btn btn-warning">Editar</a>
 
