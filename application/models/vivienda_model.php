@@ -1,32 +1,32 @@
 <?php
 
-    class Vivienda_model extends CI_Model {
+    class vivienda_model extends CI_Model {
+        
         public function __construct() {
-            parent::__construct();
+            $this->load->database();
         }
-        
-        public function get_viviendas() {
+
+        public function m_get_viviendas() {
             $query = $this->db->get('vivienda');
-            return $query->result();
+            return $query->result_array();
         }
-        
-        public function get_vivienda($id) {
+
+        public function m_get_vivienda($id) {
             $query = $this->db->get_where('vivienda', array('id' => $id));
-            return $query->row();
+            return $query->row_array();
         }
-        
-        public function insert_vivienda($data) {
+
+        public function m_insert_vivienda($data) {
             $this->db->insert('vivienda', $data);
         }
-        
-        public function update_vivienda($id, $data) {
+
+        public function m_update_vivienda($id, $data) {
             $this->db->where('id', $id);
             $this->db->update('vivienda', $data);
         }
-        
-        public function delete_vivienda($id) {
-            $this->db->where('id', $id);
-            $this->db->delete('vivienda');
+
+        public function m_delete_vivienda($id) {
+            $this->db->delete('vivienda', array('id' => $id));
         }
     }
 
