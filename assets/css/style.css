@@ -1,0 +1,9 @@
+@import url(./bootstrap.min.css);
+
+.testyFunnyGuy {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
