@@ -28,6 +28,11 @@
         public function m_delete_vivienda($id) {
             $this->db->delete('vivienda', array('id_vivienda' => $id));
         }
+
+        public function m_get_viviendas_cantidad() {
+            $query = $this->db->get('vivienda');
+            return $query->num_rows();
+        }
     }
 
 ?>
